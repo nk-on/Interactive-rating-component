@@ -1,13 +1,15 @@
 import './App.css';
+import { useState } from 'react';
 function App() {
   return <><Card /></>;
 }
 function Card() {
+  const [rated,setRated] = useState(false);
   return <div className="Card">
-    <ContentPassive/>
+    <ContentPassive rated = {rated} setRated = {setRated}/>
   </div>;
 }
-function ContentPassive() {
+function ContentPassive(props) {
   return (
     <>
       <div className="content">
