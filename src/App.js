@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from 'react';
-import contentActive from './components/contentActive/contentActive';
+import ContentActive from './components/ContentActive/ContentActive';
 function App() {
   return (
     <>
@@ -10,11 +10,18 @@ function App() {
 }
 function Card() {
   const [rated, setRated] = useState(false);
-  return (
-    <div className="Card">
-      <ContentPassive rated={rated} setRated={setRated} />
-    </div>
-  );
+  console.log(rated)
+  if (!rated) {
+    return (
+      <div className="Card">
+        <ContentPassive rated={rated} setRated={setRated} />
+      </div>
+    );
+  } else {
+    return <div className="Card">
+      <ContentActive />
+    </div>;
+  }
 }
 function ContentPassive(props) {
   const numbers = [1, 2, 3, 4, 5];
