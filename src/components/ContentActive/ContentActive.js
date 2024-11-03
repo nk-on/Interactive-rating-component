@@ -1,6 +1,6 @@
 import './contnentActive.css';
 import image from './image.svg';
-export default function ContentActive() {
+export default function ContentActive(props) {
   return (
     <>
       <div className="image-container">
@@ -8,7 +8,7 @@ export default function ContentActive() {
           <img src={image} alt="image"></img>
         </div>
         <div className="selectedRating-container">
-          you have choosen 4 from 5
+          you have choosen {props.chosenRating} from 5
         </div>
         <h1 className="title">Thank you</h1>
         <p>
