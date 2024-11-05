@@ -9,26 +9,24 @@ function App() {
   );
 }
 function Card() {
-  const [rated, setRated] = useState(false);
   const [clicked, setClicked] = useState(false);
   const [chosenRating, setChosenRating] = useState(undefined);
-  if (!rated || !clicked) {
+  console.log(chosenRating,clicked)
+  if (!chosenRating || !clicked) {
     return (
       <div className="Card">
         <ContentPassive
-          rated={rated}
-          setRated={setRated}
           clicked={clicked}
           setClicked={setClicked}
-          chosenRating = {chosenRating}
-          setChosenRating = {setChosenRating}
+          chosenRating={chosenRating}
+          setChosenRating={setChosenRating}
         />
       </div>
     );
   } else {
     return (
       <div className="Card">
-        <ContentActive chosenRating = {chosenRating}/>
+        <ContentActive chosenRating={chosenRating} />
       </div>
     );
   }
@@ -49,8 +47,7 @@ function ContentPassive(props) {
               <button
                 key={num}
                 onClick={() => {
-                  props.setRated(!props.rated);
-                  props.setChosenRating(num)
+                  props.setChosenRating(num);
                 }}
               >
                 {num}
@@ -60,7 +57,13 @@ function ContentPassive(props) {
         </div>
         <button
           className="Submit-button"
-          onClick={() => props.setClicked(!props.clicked)}
+          onClick={() => {
+            if (!props.chosenRating) {
+              return;
+            } else {
+              props.setClicked(!props.clicked);
+            }
+          }}
         >
           Submit
         </button>

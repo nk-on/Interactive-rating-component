@@ -37,6 +37,10 @@ p {
   color: #7c8798;
   cursor: pointer;
 }
+.buttons button:hover {
+  background-color: #fc7614;
+  color:#fff;
+}
 .Submit-button {
   cursor: pointer;
   border: none;
@@ -44,4 +48,7 @@ p {
   height: 45px;
   border-radius: 22.5px;
   background-color: #fc7614;
+}
+.Submit-button:hover{
+  background-color: #fff;
 }
