@@ -11,7 +11,6 @@ function App() {
 function Card() {
   const [clicked, setClicked] = useState(false);
   const [chosenRating, setChosenRating] = useState(undefined);
-  console.log(chosenRating,clicked)
   if (!chosenRating || !clicked) {
     return (
       <div className="Card">
